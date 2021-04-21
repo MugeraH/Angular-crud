@@ -1,0 +1,80 @@
+<div class="main-wrapper container-fluid">
+  <div class="row m-0">
+    <div class="col-md-6 p-3">
+      <div class="form">
+        <h4 class="text-center">PORTAL</h4>
+        <form #dataForm="ngForm" (ngSubmit)="onSumbit(dataForm)">
+          <label for="category">Category</label>
+          <select
+            class="form-control mb-2"
+            aria-label="Default select example"
+            name="category"
+            type="text"
+            id="category"
+            [(ngModel)]="category"
+          >
+            <option value="Livestock Farming">Livestock Farming</option>
+            <option value="Crop Farming">Crop Farming</option>
+            <option value="Marketing">Marketing</option>
+          </select>
+          <!-- <label for="">Product</label>
+          <select class="form-control" aria-label="Default select example" name="category">
+            <option value="1">Livestock Farming</option>
+            <option value="2">Crop Farming</option>
+            <option value="3">Marketing</option>
+          </select> -->
+          <label for="product">Product</label>
+          <input
+            type="text"
+            class="form-control mb-2"
+            name="product"
+            id="product"
+            [(ngModel)]="product"
+          />
+
+          <label for="product">Region</label>
+          <input
+            type="text"
+            class="form-control mb-2"
+            name="region"
+            id="region"
+            [(ngModel)]="region"
+          />
+
+          <label for="information">Information</label>
+          <textarea
+            type="text"
+            class="form-control m-0"
+            name="information"
+            id="information"
+            [(ngModel)]="information"
+          ></textarea>
+
+          <button class="btn btn-outline-success mt-2" type="submit">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-6 p-3 results-wrapper">
+      <div class="results" *ngFor="let infor of info">
+        <div class="title">
+          <div class="icons mb-2">
+            <i class="fa fa-pencil"></i>
+
+            <i
+              class="fa fa-trash"
+              (click)="onDelete(infor.data.category, infor.id)"
+            ></i>
+          </div>
+
+          <div class="info">
+            <h4>{{ infor.data.product }}</h4>
+            <p>{{ infor.data.region }}</p>
+          </div>
+        </div>
+        <div class="info">{{ infor.data.information }}</div>
+      </div>
+    </div>
+  </div>
+</div>
