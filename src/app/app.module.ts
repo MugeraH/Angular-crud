@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 import { FormsModule } from '@angular/forms';
 import { CrudService } from './service/crud.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
